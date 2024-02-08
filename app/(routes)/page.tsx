@@ -1,11 +1,12 @@
-import { ModeToggle } from "@/components/theme-toggle";
-import Image from "next/image";
+import FilterContent from "@/components/filter/filter";
+import { getContents } from "@/lib/action/content/action";
 
-export default function Home() {
+export default async function Home() {
+  const contents = await getContents();
+  console.log("contents", contents);
   return (
     <div>
-      <h1>Streamger Guide</h1>
-      <ModeToggle />
+      <FilterContent />
     </div>
   );
 }

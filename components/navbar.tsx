@@ -25,11 +25,7 @@ const Navbar = () => {
           Movies
         </Link>
         <Link href="/series" className="text-muted-foreground">
-          Series
-        </Link>
-        <Link href="/upcoming" className="text-muted-foreground">
-          {" "}
-          Upcoming
+          Tv Shows
         </Link>
       </div>
       <div className="flex items-center gap-5">
