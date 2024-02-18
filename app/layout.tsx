@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "../lib/utils";
+import AuthProvider from "@/providers/auth-provider";
 
 export const metadata: Metadata = {
   title: "Streamger Guide",
@@ -30,14 +31,16 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <AuthProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );

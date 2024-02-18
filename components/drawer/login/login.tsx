@@ -10,6 +10,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { signIn } from "next-auth/react";
 
 const Login = () => {
   return (
@@ -27,7 +28,11 @@ const Login = () => {
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
-          <Button variant="secondary" className="flex space-x-3">
+          <Button
+            onClick={() => signIn("google")}
+            variant="secondary"
+            className="flex space-x-3"
+          >
             <BsGoogle /> <span>Continue With Google</span>
           </Button>
         </div>
