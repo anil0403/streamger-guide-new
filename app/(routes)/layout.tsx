@@ -1,7 +1,6 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import React from "react";
-import { Suspense } from "react";
 
 interface LayoutProps {
   children?: React.ReactNode;
